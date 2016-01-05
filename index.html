@@ -1,19 +1,47 @@
 <html>
 	<head>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<div class="stats">
-			
+
+		<div class="fuel">
+			<div class="bar">
+				<div class="level"></div>
+			</div>
+			<p class="label">Fuel</p>
 		</div>
+
+		<div class="oxygen">
+			<div class="bar">
+				<div class="level"></div>
+			</div>
+			<p class="label">Oxygen</p>
+		</div>
+
+		<div class="life">
+			<p class="label">Life</p>
+			<div class="bar">
+				<div class="level"></div>
+			</div>
+		</div>
+
 		<div class="story">
-			<button>Click</button>
+			<div class="text-box">
+				
+			</div>
+			<div class="buttons">
+				<button class="option-1">Click</button>
+				<button class="option-2">Click</button>
+				<button class="option-3">Click</button>
+			</div>
 		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/three.min.js"></script>
 		<script src="js/THREE.TargetCamera.js"></script>
 		<script src="js/OrbitControls.js"></script>
+		<script src="js/solar.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
