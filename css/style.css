@@ -1,0 +1,22 @@
+body {
+	margin: 0;
+	background-image: url("../images/background.jpg");
+}
+
+.story {
+	position: absolute;
+	bottom: 25px;
+	left: 25%;
+	background-color: #fff;
+	width: 50%;
+	height: 200px;
+}
+
+.stats {
+	position: absolute;
+	right: 25px;
+	top: 25%;
+	height: 50%;
+	width: 100px;
+	background-color: #fff;
+}
