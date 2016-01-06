@@ -38,7 +38,7 @@ var neptune
 
 document.body.appendChild(renderer.domElement);
 
-camera.position.set(0, 0, 300);
+camera.position.set(0, -50, 300);
 
 
 /*******************/
@@ -49,6 +49,7 @@ $(document).ready(function() {
 	drawPlanets();
 	drawLight();
 	setTargets();
+	//scene.position.y = 100
 
 	render();
 
@@ -173,7 +174,7 @@ function drawPlanets() {
 }
 
 function rotatePlanets() {
-	sun.rotation.y += 0.0088;
+	//sun.rotation.y += 0.0088;
 
 	pivotMercure.rotation.y += 0.015;
 	mercure.rotation.y += 0.009;
@@ -226,7 +227,7 @@ function setTargets() {
 	camera.addTarget({
         name: 'Jupiter',
         targetObject: pivotJupiter,
-        cameraPosition: new THREE.Vector3(200, -20, 0),
+        cameraPosition: new THREE.Vector3(200, -30, 0),
         fixed: false,
         stiffness: 0.1,
         matchRotation: false

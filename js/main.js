@@ -6,6 +6,6 @@
 
 $('.story').find('button').on('click', function() {
 
-	camera.setTarget( 'Jupiter' );
+	camera.setTarget( 'Mercure' );
 
 })
