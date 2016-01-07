@@ -224,6 +224,33 @@ function setTargets() {
         matchRotation: false
     });
 
+    camera.addTarget({
+        name: 'Venus',
+        targetObject: pivotVenus,
+        cameraPosition: new THREE.Vector3(70, -2.5, -5),
+        fixed: false,
+        stiffness: 0.1,
+        matchRotation: false
+    });
+
+    camera.addTarget({
+        name: 'Earth',
+        targetObject: pivotEarth,
+        cameraPosition: new THREE.Vector3(90, -2.5, -5),
+        fixed: false,
+        stiffness: 0.1,
+        matchRotation: false
+    });
+
+    camera.addTarget({
+        name: 'Mars',
+        targetObject: pivotMars,
+        cameraPosition: new THREE.Vector3(105, -1, -7),
+        fixed: false,
+        stiffness: 0.1,
+        matchRotation: false
+    });
+
 	camera.addTarget({
         name: 'Jupiter',
         targetObject: pivotJupiter,

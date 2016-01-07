@@ -4,8 +4,15 @@
 // 	camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
 // })
 
+var writeText = function (message, index) {   
+  $(".text-box p").append(message[index++]);
+    setTimeout(function () { writeText(message, index); }, 100);
+}
+
 $('.story').find('button').on('click', function() {
 
-	camera.setTarget( 'Mercure' );
+	camera.setTarget( 'Mars' );
+	$(".text-box p").html("");
+	writeText("Hello, World!", 0);
 
 })
