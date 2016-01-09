@@ -1,4 +1,5 @@
 var height = (window.innerHeight);
+//var width = 1378;
 var width = window.innerWidth;
 
 var renderer = new THREE.WebGLRenderer( { alpha: true } );
@@ -54,6 +55,14 @@ $(document).ready(function() {
 	render();
 
 });
+
+$(window).resize(function() {
+	//$('canvas').width(window.innerWidth).height(window.innerHeight);
+	camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+})
 
 function render() {
 	requestAnimationFrame(render);

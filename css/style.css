@@ -1,10 +1,18 @@
 body {
   margin: 0;
-  overflow: hidden;
+  overflow-y: hidden;
   background-image: url("../images/background.jpg"); }
 
 p {
   font-family: 'Open Sans', sans-serif; }
+
+.content {
+  width: 1378px;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); }
 
 .spaceship {
   position: absolute;

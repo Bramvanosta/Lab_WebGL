@@ -1,17 +1,27 @@
+html {
+	//background-color: #000;
+	//background-image: url("../images/background.jpg");
+}
+
 body {
-	// max-width: 1378px;
-	// position: relative;
-	// left: 50%;
-	// transform: translateX(-50%);
 	margin: 0;
-	overflow: hidden;
-	// background: url("../images/background.jpg") no-repeat center center fixed;
+	overflow-y: hidden;
+	//background: url("../images/background.jpg") no-repeat center center fixed;
 	background-image: url("../images/background.jpg");
-	// background-size: 1378px 100%;
+	//background-size: 1378px 100%;
 }
 
 p {
 	font-family: 'Open Sans', sans-serif;
+}
+
+.content {
+	width: 1378px;
+	height: auto;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .spaceship {
