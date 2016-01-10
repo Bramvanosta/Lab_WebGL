@@ -1,4 +1,4 @@
-var height = (window.innerHeight);
+var height = (window.innerHeight)-(30*window.innerHeight/100);
 //var width = 1378;
 var width = window.innerWidth;
 
@@ -39,7 +39,8 @@ var neptune
 
 document.body.appendChild(renderer.domElement);
 
-camera.position.set(0, -50, 300);
+//camera.position.set(0, -50, 300);
+camera.position.set(0, 0, 300);
 
 
 /*******************/
@@ -52,16 +53,20 @@ $(document).ready(function() {
 	setTargets();
 	//scene.position.y = 100
 
+	//camera.setTarget( 'Init' );
 	render();
 
 });
 
 $(window).resize(function() {
 	//$('canvas').width(window.innerWidth).height(window.innerHeight);
-	camera.aspect = window.innerWidth / window.innerHeight;
+	var newWidth = window.innerWidth;
+	var newHeight = (window.innerHeight)-(30*window.innerHeight/100);
+
+	camera.aspect = newWidth / newHeight;
     camera.updateProjectionMatrix();
 
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize( newWidth, newHeight );
 })
 
 function render() {
@@ -84,9 +89,10 @@ function drawLight() {
 }
 
 function drawPlanets() {
+	var textureLoader = new THREE.TextureLoader();
 
 	var geometrySun = new THREE.SphereGeometry( 20, 32, 32 );
-	var textureSun =  THREE.ImageUtils.loadTexture("images/sunmap.jpg"); 
+	var textureSun = textureLoader.load("images/sunmap.jpg"); 
 	var materialSun = new THREE.MeshBasicMaterial( {map: textureSun} );
 	sun = new THREE.Mesh(geometrySun, materialSun);
 	scene.add(sun);
@@ -95,7 +101,7 @@ function drawPlanets() {
 	pivotMercure.rotation.y = Math.floor((Math.random() * 100) + 1);
 	scene.add(pivotMercure);
 	var geometryMercure = new THREE.SphereGeometry( 0.48, 32, 32 );
-	var textureMercure =  THREE.ImageUtils.loadTexture("images/mercurymap.jpg"); 
+	var textureMercure =  textureLoader.load("images/mercurymap.jpg"); 
 	var materialMercure = new THREE.MeshPhongMaterial( {map: textureMercure} );
 	mercure = new THREE.Mesh(geometryMercure, materialMercure);
 	mercure.position.x = 40;
@@ -105,7 +111,7 @@ function drawPlanets() {
 	pivotVenus.rotation.y = Math.floor((Math.random() * 100) + 1);
 	scene.add(pivotVenus);
 	var geometryVenus = new THREE.SphereGeometry( 1.21, 32, 32 );
-	var textureVenus =  THREE.ImageUtils.loadTexture("images/venusmap.jpg"); 
+	var textureVenus =  textureLoader.load("images/venusmap.jpg"); 
 	var materialVenus = new THREE.MeshPhongMaterial( {map: textureVenus} );
 	venus = new THREE.Mesh(geometryVenus, materialVenus);
 	venus.position.x = 60;
@@ -115,7 +121,7 @@ function drawPlanets() {
 	pivotEarth.rotation.y = Math.floor((Math.random() * 100) + 1);
 	scene.add(pivotEarth);
 	var geometryEarth = new THREE.SphereGeometry( 1.275, 32, 32 );
-	var textureEarth =  THREE.ImageUtils.loadTexture("images/earthmap.jpg"); 
+	var textureEarth =  textureLoader.load("images/earthmap.jpg"); 
 	var materialEarth = new THREE.MeshPhongMaterial( {map: textureEarth} );
 	earth = new THREE.Mesh(geometryEarth, materialEarth);
 	earth.position.x = 80;
@@ -124,7 +130,7 @@ function drawPlanets() {
 	pivotMoon = new THREE.Object3D();
 	earth.add(pivotMoon);
 	var geometryMoon = new THREE.SphereGeometry( 0.15, 32, 32 );
-	var textureMoon =  THREE.ImageUtils.loadTexture("images/moonmap.jpg"); 
+	var textureMoon =  textureLoader.load("images/moonmap.jpg"); 
 	var materialMoon = new THREE.MeshPhongMaterial( {map: textureMoon} );
 	moon = new THREE.Mesh(geometryMoon, materialMoon);
 	moon.position.x = 4;
@@ -134,7 +140,7 @@ function drawPlanets() {
 	pivotMars.rotation.y = Math.floor((Math.random() * 100) + 1);
 	scene.add(pivotMars);
 	var geometryMars = new THREE.SphereGeometry( 0.68, 32, 32 );
-	var textureMars =  THREE.ImageUtils.loadTexture("images/marsmap.jpg"); 
+	var textureMars =  textureLoader.load("images/marsmap.jpg"); 
 	var materialMars = new THREE.MeshPhongMaterial( {map: textureMars} );
 	mars = new THREE.Mesh(geometryMars, materialMars);
 	mars.position.x = 100;
@@ -144,7 +150,7 @@ function drawPlanets() {
 	pivotJupiter.rotation.y = Math.floor((Math.random() * 100) + 1);
 	scene.add(pivotJupiter);
 	var geometryJupiter = new THREE.SphereGeometry( 10, 32, 32 );
-	var textureJupiter =  THREE.ImageUtils.loadTexture("images/jupitermap.jpg"); 
+	var textureJupiter =  textureLoader.load("images/jupitermap.jpg"); 
 	var materialJupiter = new THREE.MeshPhongMaterial( {map: textureJupiter} );
 	jupiter = new THREE.Mesh(geometryJupiter, materialJupiter);
 	jupiter.position.x = 120;
@@ -154,7 +160,7 @@ function drawPlanets() {
 	pivotSaturn.rotation.y = Math.floor((Math.random() * 100) + 1);
 	scene.add(pivotSaturn);
 	var geometrySaturn = new THREE.SphereGeometry( 8, 32, 32 );
-	var textureSaturn =  THREE.ImageUtils.loadTexture("images/saturnmap.jpg"); 
+	var textureSaturn =  textureLoader.load("images/saturnmap.jpg"); 
 	var materialSaturn = new THREE.MeshPhongMaterial( {map: textureSaturn} );
 	saturn = new THREE.Mesh(geometrySaturn, materialSaturn);
 	saturn.position.x = 150;
@@ -164,7 +170,7 @@ function drawPlanets() {
 	pivotNeptune.rotation.y = Math.floor((Math.random() * 100) + 1);
 	scene.add(pivotNeptune);
 	var geometryNeptune = new THREE.SphereGeometry( 10, 32, 32 );
-	var textureNeptune =  THREE.ImageUtils.loadTexture("images/neptunemap.jpg"); 
+	var textureNeptune =  textureLoader.load("images/neptunemap.jpg"); 
 	var materialNeptune = new THREE.MeshPhongMaterial( {map: textureNeptune} );
 	neptune = new THREE.Mesh(geometryJupiter, materialNeptune);
 	neptune.position.x = 180;
@@ -174,7 +180,7 @@ function drawPlanets() {
 	pivotUranus.rotation.y = Math.floor((Math.random() * 100) + 1);
 	scene.add(pivotUranus);
 	var geometryUranus = new THREE.SphereGeometry( 10, 32, 32 );
-	var textureUranus =  THREE.ImageUtils.loadTexture("images/uranusmap.jpg"); 
+	var textureUranus =  textureLoader.load("images/uranusmap.jpg"); 
 	var materialUranus = new THREE.MeshPhongMaterial( {map: textureUranus} );
 	uranus = new THREE.Mesh(geometryUranus, materialUranus);
 	uranus.position.x = 210;
@@ -214,6 +220,15 @@ function rotatePlanets() {
 }
 
 function setTargets() {
+
+	camera.addTarget({
+        name: 'Init',
+        targetObject: sun,
+        cameraPosition: new THREE.Vector3(0, 0, 300),
+        fixed: false,
+        stiffness: 0.1,
+        matchRotation: true
+    });
 
 	camera.addTarget({
         name: 'Sun',
@@ -264,6 +279,33 @@ function setTargets() {
         name: 'Jupiter',
         targetObject: pivotJupiter,
         cameraPosition: new THREE.Vector3(200, -30, 0),
+        fixed: false,
+        stiffness: 0.1,
+        matchRotation: false
+    });
+
+    camera.addTarget({
+        name: 'Saturn',
+        targetObject: pivotSaturn,
+        cameraPosition: new THREE.Vector3(200, -10, -3),
+        fixed: false,
+        stiffness: 0.1,
+        matchRotation: false
+    });
+
+    camera.addTarget({
+        name: 'Neptune',
+        targetObject: pivotNeptune,
+        cameraPosition: new THREE.Vector3(250, -15, 0),
+        fixed: false,
+        stiffness: 0.1,
+        matchRotation: false
+    });
+
+    camera.addTarget({
+        name: 'Uranus',
+        targetObject: pivotUranus,
+        cameraPosition: new THREE.Vector3(300, -15, 5),
         fixed: false,
         stiffness: 0.1,
         matchRotation: false

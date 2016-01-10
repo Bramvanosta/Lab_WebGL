@@ -1,21 +1,22 @@
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		<div class="content">
-		
+
 			<div class="fuel">
 				<div class="bar">
-					<div class="level"></div>
+					<div class="level" data="100"></div>
 				</div>
 				<p class="label">Fuel</p>
 			</div>
 
 			<div class="oxygen">
 				<div class="bar">
-					<div class="level"></div>
+					<div class="level" data="100"></div>
 				</div>
 				<p class="label">Oxygen</p>
 			</div>
@@ -23,18 +24,23 @@
 			<div class="life">
 				<p class="label">Life</p>
 				<div class="bar">
-					<div class="level"></div>
+					<div class="level" data="100"></div>
 				</div>
 			</div>
 
 			<div class="story">
 				<div class="text-box">
-					<p>This is a test</p>
+					<p class="text">This is a test</p>
+					<p class="option option-1">A : <span></span></p>
+					<p class="option option-2">B : <span></span></p>
+					<p class="option option-3">C : <span></span></p>
 				</div>
 				<div class="buttons">
 					<button class="option-1">A</button>
 					<button class="option-2">B</button>
 					<button class="option-3">C</button>
+					<button class="option-4">OK</button>
+					<button class="option-5">RESTART</button>
 				</div>
 			</div>
 
@@ -42,11 +48,12 @@
 
 		</div>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="js/three.min.js"></script>
-		<script src="js/THREE.TargetCamera.js"></script>
-		<script src="js/OrbitControls.js"></script>
+		<script src="js/vendor/jquery.min.js"></script>
+		<script src="js/vendor/three.min.js"></script>
+		<script src="js/vendor/THREE.TargetCamera.js"></script>
+		<!-- <script src="js/OrbitControls.js"></script> -->
 		<script src="js/solar.js"></script>
+		<script src="js/story.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
